@@ -1,0 +1,2 @@
+Owner,Author,Disclaimer,Description,Version,Name,UIName,URL,entityName,oAuthSettingId,transformSettingIDs,seedIDs,outputEntities
+HawkEyes,Hawk Dev,,"Finds names, emails, phones, geolocations, usernames, social link from website",0.1.0,fromwebsite,From Website [URLscrapter],https://hawk-eyes.com/run/fromwebsite,maltego.Website,,,demo,maltego.Person;maltego.Email;maltego.PhoneNumber;maltego.Location;maltego.URL

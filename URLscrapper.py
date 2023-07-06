@@ -29,7 +29,8 @@ def _extract_social_media_links(soup):
         'Telegram': r'(?:t.me/)(\w+)',
         'Tumblr': r'(?:tumblr.com/)(\w+)',
         'Flickr': r'(?:flickr.com/people/)(\w+)',
-        'Quora': r'(?:quora.com/profile/)(\w+)'
+        'Quora': r'(?:quora.com/profile/)(\w+)',
+        'GitHub': f'(?:github.com/)(\w+)'
         }
 
     social_media_links = {}
@@ -144,3 +145,51 @@ def get_data(url):
         urls = list(set(urls).union(new_urls))
     
     return data
+
+
+"""
+Test Code
+"""
+
+# from_website = 'hawk-eyes.io'
+# data = get_data(from_website)
+
+# for d in data:s
+#     source = d['source']
+#     details = d['data']
+
+#     # emails
+#     for email in details['email_addresses']:
+#         print(email)
+#         print(source)
+#         print()
+    
+#     # author_names
+#     for name in details['author_names']:
+#         print(name)
+#         print(source)
+#         print() 
+
+#     # geolocation
+#     for location in details['geolocations']:
+#         print(location)
+#         print(source)
+#         print()
+
+#     # phone_numbers
+#     for number in details['phone_numbers']:
+#         print(number)
+#         print(source)
+#         print()
+
+#     # usernames
+#     for username in details['usernames']:
+#         print(username)
+#         print(source)
+#         print()
+
+#     # social_links
+#     for platform, link in details['social_links'].items(): 
+#         print(platform, link)
+#         print(source)
+#         print()
