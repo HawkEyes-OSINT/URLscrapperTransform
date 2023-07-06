@@ -6,22 +6,22 @@ The 'fromURL' transform can be applied to a maltego.URL entity, while the 'fromW
 
 To install these transforms in your Maltego client, follow these steps:
 
-    Open a terminal and navigate to the directory where you wish to store the transform files.
-    Run the following commands:
+Open a terminal and navigate to the directory where you wish to store the transform files.
+Run the following commands:
 
-git clone https://github.com/HawkEyes-OSINT/URLscrapperTransform.git
-cd URLscrapperTransform
-pip install -r requirements.txt
-python project.py list
+    git clone https://github.com/HawkEyes-OSINT/URLscrapperTransform.git
+    cd URLscrapperTransform
+    pip install -r requirements.txt
+    python project.py list
 
 After executing these commands, a file named URLscrapper.mtz will be available in your directory.
 
 To import the transforms into your Maltego client, proceed as follows:
 
-    Open your Maltego client and navigate to the 'Import/Export' tab.
-    Click on 'Import Config.'
-    Select the file 'URLscrapper.mtz.'
+Open your Maltego client and navigate to the 'Import/Export' tab.
+Click on 'Import Config.'
+Select the file 'URLscrapper.mtz.'
 
 By following these steps, you will successfully install the URLscrapper transforms on your Maltego client.
 
-For more information or support, please visit HawkeEyes at hawk-eyes.io.
+For more information or support, please visit HawkeEyes at https://hawk-eyes.io.
