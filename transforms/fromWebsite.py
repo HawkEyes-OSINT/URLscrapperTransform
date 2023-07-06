@@ -1,5 +1,5 @@
 from maltego_trx.transform import DiscoverableTransform
-from maltego_trx.entities import Person, Email, Location, PhoneNumber,  Alias, URL, Phrase
+from maltego_trx.entities import Person, Email, Location, PhoneNumber,  Alias, URL
 from extensions import registry, URLscraper_set
 from URLscrapper import get_data
 
