@@ -30,7 +30,7 @@ def _extract_social_media_links(soup):
         'Tumblr': r'(?:tumblr.com/)(\w+)',
         'Flickr': r'(?:flickr.com/people/)(\w+)',
         'Quora': r'(?:quora.com/profile/)(\w+)',
-        'GitHub': f'(?:github.com/)(\w+)'
+        'GitHub': r'(?:github.com/)(\w+)'
         }
 
     social_media_links = {}

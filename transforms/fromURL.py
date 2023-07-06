@@ -4,12 +4,12 @@ from extensions import registry, URLscraper_set
 from URLscrapper import get_data
 
 
-@registry.register_transform(display_name="From Website [URLscrapter]", 
-                             input_entity="maltego.Website", 
+@registry.register_transform(display_name="From URL [URLscrapter]", 
+                             input_entity="maltego.URL", 
                              description="Finds names, emails, phones, geolocations, usernames, social link from website", 
                              output_entities=["maltego.Person", "maltego.Email", "maltego.PhoneNumber", "maltego.Location", "maltego.URL"],
                              transform_set=URLscraper_set)
-class fromWebsite(DiscoverableTransform):
+class fromURL(DiscoverableTransform):
 
     @classmethod
     def create_entities(cls, request, response):
@@ -25,42 +25,42 @@ class fromWebsite(DiscoverableTransform):
         for d in data:
             source = d['source']
             details = d['data']
-        
+
             # create entities
             # emails
             for email in details['email_addresses']:
                 ent = response.addEntity(Email, email)
                 ent.setLinkThickness(1)
                 ent.setLinkLabel("urlstrapper")
-                ent.addCustomLinkProperty('page', 'Page URL', source)
-            
+                ent.setCustomLinkProperty('description', 'Description', source)
+
             # author_names
             for name in details['author_names']:
                 ent = response.addEntity(Person, name)
                 ent.setLinkThickness(1)
                 ent.setLinkLabel("urlstrapper")
-                ent.addCustomLinkProperty('page', 'Page URL', source)
+                ent.setCustomLinkProperty('description', 'Description', source)
 
             # geolocation
             for location in details['geolocations']:
                 ent = response.addEntity(Location, location)
                 ent.setLinkThickness(1)
                 ent.setLinkLabel("urlstrapper")
-                ent.addCustomLinkProperty('page', 'Page URL', source)
+                ent.setCustomLinkProperty('description', 'Description', source)
 
             # phone numbers
             for phone in details['phone_numbers']:
                 ent = response.addEntity(PhoneNumber, phone)
                 ent.setLinkThickness(1)
                 ent.setLinkLabel("urlstrapper")
-                ent.addCustomLinkProperty('page', 'Page URL', source)
+                ent.setCustomLinkProperty('description', 'Description', source)
 
             # usernames
             for username in details['usernames']:
                 ent = response.addEntity(Alias, username)
                 ent.setLinkThickness(1)
                 ent.setLinkLabel("urlstrapper")
-                ent.addCustomLinkProperty('page', 'Page URL', source)
+                ent.setCustomLinkProperty('description', 'Description', source)
 
             # social links
             for platform, link in details['social_links'].items():
@@ -68,4 +68,4 @@ class fromWebsite(DiscoverableTransform):
                 ent.addProperty('url', 'URL', 'loose', link)
                 ent.setLinkThickness(1)
                 ent.setLinkLabel("urlstrapper")
-                ent.addCustomLinkProperty('page', 'Page URL', source) 
+                #ent.addCustomLinkProperty('page', 'Page URL', source) 
