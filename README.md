@@ -12,7 +12,7 @@ Run the following commands:
     git clone https://github.com/HawkEyes-OSINT/URLscrapperTransform.git
     cd URLscrapperTransform
     pip install -r requirements.txt
-    python project.py list
+    python project.py run
 
 After executing these commands, a file named URLscrapper.mtz will be available in your directory.
 
